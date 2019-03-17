@@ -1,0 +1,307 @@
+ELF Header:
+  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF32
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              EXEC (Executable file)
+  Machine:                           ARM
+  Version:                           0x1
+  Entry point address:               0x0
+  Start of program headers:          52 (bytes into file)
+  Start of section headers:          189396 (bytes into file)
+  Flags:                             0x5000400, Version5 EABI, hard-float ABI
+  Size of this header:               52 (bytes)
+  Size of program headers:           32 (bytes)
+  Number of program headers:         4
+  Size of section headers:           40 (bytes)
+  Number of section headers:         21
+  Section header string table index: 18
+
+Section Headers:
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .text             PROGBITS        00000000 010000 000db4 00  AX  0   0  4
+  [ 2] .rodata           PROGBITS        00000db4 010db4 00001c 00   A  0   0  4
+  [ 3] .eh_frame         PROGBITS        00000dd0 010dd0 000004 00   A  0   0  4
+  [ 4] .ARM.exidx        ARM_EXIDX       00000dd4 010dd4 000008 00  AL  1   0  4
+  [ 5] .data             PROGBITS        20000000 020000 000870 00  WA  0   0  8
+  [ 6] .jcr              PROGBITS        20000870 020870 000004 00  WA  0   0  4
+  [ 7] .bss              NOBITS          20000874 020874 000064 00  WA  0   0  4
+  [ 8] .ARM.attributes   ARM_ATTRIBUTES  00000000 020874 000030 00      0   0  1
+  [ 9] .comment          PROGBITS        00000000 0208a4 00002b 01  MS  0   0  1
+  [10] .debug_line       PROGBITS        00000000 0208cf 00153b 00      0   0  1
+  [11] .debug_info       PROGBITS        00000000 021e0a 006a1d 00      0   0  1
+  [12] .debug_abbrev     PROGBITS        00000000 028827 001988 00      0   0  1
+  [13] .debug_aranges    PROGBITS        00000000 02a1b0 000260 00      0   0  8
+  [14] .debug_str        PROGBITS        00000000 02a410 000e55 01  MS  0   0  1
+  [15] .debug_frame      PROGBITS        00000000 02b268 0003c0 00      0   0  4
+  [16] .debug_loc        PROGBITS        00000000 02b628 0019fb 00      0   0  1
+  [17] .debug_ranges     PROGBITS        00000000 02d023 000078 00      0   0  1
+  [18] .shstrtab         STRTAB          00000000 02e307 0000cd 00      0   0  1
+  [19] .symtab           SYMTAB          00000000 02d09c 000d30 10     20 147  4
+  [20] .strtab           STRTAB          00000000 02ddcc 00053b 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings), I (info),
+  L (link order), O (extra OS processing required), G (group), T (TLS),
+  C (compressed), x (unknown), o (OS specific), E (exclude),
+  y (noread), p (processor specific)
+
+There are no section groups in this file.
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  EXIDX          0x010dd4 0x00000dd4 0x00000dd4 0x00008 0x00008 R   0x4
+  LOAD           0x010000 0x00000000 0x00000000 0x00ddc 0x00ddc R E 0x10000
+  LOAD           0x020000 0x20000000 0x00000ddc 0x00874 0x00874 RW  0x10000
+  LOAD           0x020874 0x20000874 0x20000874 0x00000 0x00064 RW  0x10000
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     .ARM.exidx 
+   01     .text .rodata .eh_frame .ARM.exidx 
+   02     .data .jcr 
+   03     .bss 
+
+There is no dynamic section in this file.
+
+There are no relocations in this file.
+
+Unwind table index '.ARM.exidx' at offset 0x10dd4 contains 1 entries:
+
+0xa4 <_start>: 0x1 [cantunwind]
+
+
+Symbol table '.symtab' contains 211 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000     0 SECTION LOCAL  DEFAULT    1 
+     2: 00000db4     0 SECTION LOCAL  DEFAULT    2 
+     3: 00000dd0     0 SECTION LOCAL  DEFAULT    3 
+     4: 00000dd4     0 SECTION LOCAL  DEFAULT    4 
+     5: 20000000     0 SECTION LOCAL  DEFAULT    5 
+     6: 20000870     0 SECTION LOCAL  DEFAULT    6 
+     7: 20000874     0 SECTION LOCAL  DEFAULT    7 
+     8: 00000000     0 SECTION LOCAL  DEFAULT    8 
+     9: 00000000     0 SECTION LOCAL  DEFAULT    9 
+    10: 00000000     0 SECTION LOCAL  DEFAULT   10 
+    11: 00000000     0 SECTION LOCAL  DEFAULT   11 
+    12: 00000000     0 SECTION LOCAL  DEFAULT   12 
+    13: 00000000     0 SECTION LOCAL  DEFAULT   13 
+    14: 00000000     0 SECTION LOCAL  DEFAULT   14 
+    15: 00000000     0 SECTION LOCAL  DEFAULT   15 
+    16: 00000000     0 SECTION LOCAL  DEFAULT   16 
+    17: 00000000     0 SECTION LOCAL  DEFAULT   17 
+    18: 00000000     0 FILE    LOCAL  DEFAULT  ABS /usr/lib/gcc/arm-none-eab
+    19: 00000d98     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    20: 00000da4     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    21: 00000000     0 FILE    LOCAL  DEFAULT  ABS crtstuff.c
+    22: 00000dd0     0 OBJECT  LOCAL  DEFAULT    3 __EH_FRAME_BEGIN__
+    23: 20000870     0 OBJECT  LOCAL  DEFAULT    6 __JCR_LIST__
+    24: 00000000     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    25: 00000001     0 FUNC    LOCAL  DEFAULT    1 deregister_tm_clones
+    26: 00000014     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    27: 00000020     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    28: 00000021     0 FUNC    LOCAL  DEFAULT    1 register_tm_clones
+    29: 00000038     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    30: 20000000     0 NOTYPE  LOCAL  DEFAULT    5 $d
+    31: 00000044     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    32: 00000045     0 FUNC    LOCAL  DEFAULT    1 __do_global_dtors_aux
+    33: 00000060     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    34: 20000874     0 NOTYPE  LOCAL  DEFAULT    7 completed.6523
+    35: 00000da8     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    36: 00000da8     0 OBJECT  LOCAL  DEFAULT    1 __do_global_dtors_aux_fin
+    37: 0000006c     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    38: 0000006d     0 FUNC    LOCAL  DEFAULT    1 frame_dummy
+    39: 00000090     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    40: 20000878     0 NOTYPE  LOCAL  DEFAULT    7 object.6528
+    41: 00000d90     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    42: 00000d90     0 OBJECT  LOCAL  DEFAULT    1 __frame_dummy_init_array_
+    43: 20000874     0 NOTYPE  LOCAL  DEFAULT    7 $d
+    44: 00000000     0 FILE    LOCAL  DEFAULT  ABS /usr/lib/gcc/arm-none-eab
+    45: 000000a4     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    46: 000000f0     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    47: 00000dd4     0 NOTYPE  LOCAL  DEFAULT    4 $d
+    48: 00000000     0 FILE    LOCAL  DEFAULT  ABS main.c
+    49: 20000890     0 NOTYPE  LOCAL  DEFAULT    7 $d
+    50: 20000890     0 NOTYPE  LOCAL  DEFAULT    7 g1
+    51: 00000db4     0 NOTYPE  LOCAL  DEFAULT    2 $d
+    52: 0000010c     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    53: 00000160     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    54: 00000010     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    55: 00000000     0 FILE    LOCAL  DEFAULT  ABS misc.c
+    56: 20000008     0 NOTYPE  LOCAL  DEFAULT    5 $d
+    57: 00000db8     0 NOTYPE  LOCAL  DEFAULT    2 $d
+    58: 00000164     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    59: 000001cc     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    60: 20000898     0 NOTYPE  LOCAL  DEFAULT    7 f2.4039
+    61: 20000898     0 NOTYPE  LOCAL  DEFAULT    7 $d
+    62: 00000048     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    63: 00000000     0 FILE    LOCAL  DEFAULT  ABS atexit.c
+    64: 000001d8     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    65: 00000080     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    66: 00000000     0 FILE    LOCAL  DEFAULT  ABS exit.c
+    67: 000001e4     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    68: 00000200     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    69: 000000a0     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    70: 00000000     0 FILE    LOCAL  DEFAULT  ABS fini.c
+    71: 00000204     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    72: 00000224     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    73: 000000c8     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    74: 00000000     0 FILE    LOCAL  DEFAULT  ABS impure.c
+    75: 00000dc8     0 NOTYPE  LOCAL  DEFAULT    2 $d
+    76: 20000038  1064 OBJECT  LOCAL  DEFAULT    5 impure_data
+    77: 20000030     0 NOTYPE  LOCAL  DEFAULT    5 $d
+    78: 00000dcc     0 NOTYPE  LOCAL  DEFAULT    2 $d
+    79: 00000000     0 FILE    LOCAL  DEFAULT  ABS init.c
+    80: 0000022c     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    81: 0000026c     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    82: 000000fc     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    83: 00000000     0 FILE    LOCAL  DEFAULT  ABS malloc.c
+    84: 0000027c     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    85: 00000288     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    86: 0000028c     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    87: 00000298     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    88: 00000128     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    89: 00000000     0 FILE    LOCAL  DEFAULT  ABS mallocr.c
+    90: 0000029c     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    91: 000005fc     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    92: 00000604     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    93: 00000804     0 NOTYPE  LOCAL  DEFAULT    1 $d
+    94: 20000460     0 NOTYPE  LOCAL  DEFAULT    5 $d
+    95: 2000089c     0 NOTYPE  LOCAL  DEFAULT    7 $d
+    96: 00000158     0 NOTYPE  LOCAL  DEFAULT   15 $d
+    97: 00000000     0 FILE    LOCAL  DEFAULT  ABS memset.c
+    98: 00000808     0 NOTYPE  LOCAL  DEFAULT    1 $t
+    99: 000001b0     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   100: 00000000     0 FILE    LOCAL  DEFAULT  ABS mlock.c
+   101: 000008a4     0 NOTYPE  LOCAL  DEFAULT    1 $t
+   102: 000001e4     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   103: 00000000     0 FILE    LOCAL  DEFAULT  ABS sbrkr.c
+   104: 000008ac     0 NOTYPE  LOCAL  DEFAULT    1 $t
+   105: 000008cc     0 NOTYPE  LOCAL  DEFAULT    1 $d
+   106: 00000214     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   107: 00000000     0 FILE    LOCAL  DEFAULT  ABS __atexit.c
+   108: 000008d0     0 NOTYPE  LOCAL  DEFAULT    1 $t
+   109: 0000096c     0 NOTYPE  LOCAL  DEFAULT    1 $d
+   110: 00000240     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   111: 00000000     0 FILE    LOCAL  DEFAULT  ABS __call_atexit.c
+   112: 00000d7c     0 NOTYPE  LOCAL  DEFAULT    1 $t
+   113: 00000d7d    20 FUNC    LOCAL  DEFAULT    1 register_fini
+   114: 00000d88     0 NOTYPE  LOCAL  DEFAULT    1 $d
+   115: 00000d94     0 NOTYPE  LOCAL  DEFAULT    1 $d
+   116: 00000974     0 NOTYPE  LOCAL  DEFAULT    1 $t
+   117: 00000a44     0 NOTYPE  LOCAL  DEFAULT    1 $d
+   118: 00000274     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   119: 00000000     0 FILE    LOCAL  DEFAULT  ABS mallocr.c
+   120: 00000a4c     0 NOTYPE  LOCAL  DEFAULT    1 $t
+   121: 00000adc     0 NOTYPE  LOCAL  DEFAULT    1 $d
+   122: 00000ae8     0 NOTYPE  LOCAL  DEFAULT    1 $t
+   123: 00000ca8     0 NOTYPE  LOCAL  DEFAULT    1 $d
+   124: 000002c4     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   125: 00000000     0 FILE    LOCAL  DEFAULT  ABS reent.c
+   126: 00000cb8     0 NOTYPE  LOCAL  DEFAULT    1 $t
+   127: 00000d58     0 NOTYPE  LOCAL  DEFAULT    1 $d
+   128: 00000338     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   129: 00000000     0 FILE    LOCAL  DEFAULT  ABS sbrk.c
+   130: 00000d5c     0 NOTYPE  LOCAL  DEFAULT    1 $t
+   131: 00000d70     0 NOTYPE  LOCAL  DEFAULT    1 $d
+   132: 200008d0     0 NOTYPE  LOCAL  DEFAULT    7 $d
+   133: 200008d0     4 OBJECT  LOCAL  DEFAULT    7 heap_end.4169
+   134: 00000390     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   135: 00000000     0 FILE    LOCAL  DEFAULT  ABS _exit.c
+   136: 00000d78     0 NOTYPE  LOCAL  DEFAULT    1 $t
+   137: 000003b0     0 NOTYPE  LOCAL  DEFAULT   15 $d
+   138: 00000000     0 FILE    LOCAL  DEFAULT  ABS crtstuff.c
+   139: 00000dd0     0 NOTYPE  LOCAL  DEFAULT    3 $d
+   140: 00000dd0     0 OBJECT  LOCAL  DEFAULT    3 __FRAME_END__
+   141: 20000870     0 NOTYPE  LOCAL  DEFAULT    6 $d
+   142: 20000870     0 OBJECT  LOCAL  DEFAULT    6 __JCR_END__
+   143: 00000000     0 FILE    LOCAL  DEFAULT  ABS /usr/lib/gcc/arm-none-eab
+   144: 00000d9c     0 NOTYPE  LOCAL  DEFAULT    1 $t
+   145: 00000dac     0 NOTYPE  LOCAL  DEFAULT    1 $t
+   146: 20000004     0 NOTYPE  LOCAL  DEFAULT    5 $d
+   147: 00000cb9    26 FUNC    GLOBAL DEFAULT    1 cleanup_glue
+   148: 20000894     1 OBJECT  GLOBAL DEFAULT    7 g4
+   149: 20000000     0 NOTYPE  GLOBAL DEFAULT    5 __data_start__
+   150: 000008a9     2 FUNC    GLOBAL DEFAULT    1 __malloc_unlock
+   151: 20000004     1 OBJECT  GLOBAL DEFAULT    5 g3
+   152: 00000ddc     0 NOTYPE  GLOBAL DEFAULT    4 __exidx_end
+   153: 00000ddc     0 NOTYPE  GLOBAL DEFAULT    4 __etext
+   154: 200008d4     4 OBJECT  GLOBAL DEFAULT    7 errno
+   155: 20000000     0 NOTYPE  GLOBAL DEFAULT  ABS _vtable_base_address
+   156: 20000874     0 OBJECT  GLOBAL HIDDEN     6 __TMC_END__
+   157: 0000027d    16 FUNC    GLOBAL DEFAULT    1 malloc
+   158: 2000089c     4 OBJECT  GLOBAL DEFAULT    7 __malloc_top_pad
+   159: 200008d8     0 NOTYPE  GLOBAL DEFAULT    8 __HeapLimit
+   160: 200008d8     0 NOTYPE  GLOBAL DEFAULT    8 __heap_end__
+   161: 20000874     0 NOTYPE  GLOBAL DEFAULT    7 __bss_start__
+   162: 20000000     0 OBJECT  GLOBAL HIDDEN     5 __dso_handle
+   163: 000008ad    36 FUNC    GLOBAL DEFAULT    1 _sbrk_r
+   164: 200008c8     4 OBJECT  GLOBAL DEFAULT    7 __malloc_max_sbrked_mem
+   165: 00000dd4     0 NOTYPE  GLOBAL DEFAULT    4 __exidx_start
+   166: 00000dc8     4 OBJECT  GLOBAL DEFAULT    2 _global_impure_ptr
+   167: 0000022d    80 FUNC    GLOBAL DEFAULT    1 __libc_init_array
+   168: 000000a5     0 FUNC    GLOBAL DEFAULT    1 _mainCRTStartup
+   169: 00201000     0 NOTYPE  GLOBAL DEFAULT  ABS _tlv_base_address
+   170: 00000d5d    28 FUNC    GLOBAL DEFAULT    1 _sbrk
+   171: 00000d99     0 FUNC    GLOBAL DEFAULT    1 _init
+   172: 00000205    40 FUNC    GLOBAL DEFAULT    1 __libc_fini_array
+   173: 00000cd5   136 FUNC    GLOBAL DEFAULT    1 _reclaim_reent
+   174: 20000008    40 OBJECT  GLOBAL DEFAULT    5 g5
+   175: 00000db4     4 OBJECT  GLOBAL DEFAULT    2 g2
+   176: 200008d8     0 NOTYPE  GLOBAL DEFAULT    8 end
+   177: 20000870     0 NOTYPE  GLOBAL DEFAULT    5 __data_end__
+   178: 200008d8     0 NOTYPE  GLOBAL DEFAULT    7 __bss_end__
+   179: 00000ae9   464 FUNC    GLOBAL DEFAULT    1 _free_r
+   180: 00000975   216 FUNC    GLOBAL DEFAULT    1 __call_exitprocs
+   181: 20000868     4 OBJECT  GLOBAL DEFAULT    5 __malloc_sbrk_base
+   182: 000000a5     0 FUNC    GLOBAL DEFAULT    1 _start
+   183: 200008d8     0 NOTYPE  GLOBAL DEFAULT    8 __end
+   184: 000008d1   164 FUNC    GLOBAL DEFAULT    1 __register_exitproc
+   185: 200008a0    40 OBJECT  GLOBAL DEFAULT    7 __malloc_current_mallinfo
+   186: 00000ddc     0 NOTYPE  GLOBAL DEFAULT  ABS __data_load__
+   187: 20000460  1032 OBJECT  GLOBAL DEFAULT    5 __malloc_av_
+   188: 000008a5     2 FUNC    GLOBAL DEFAULT    1 __malloc_lock
+   189: 00202000     0 NOTYPE  GLOBAL DEFAULT  ABS _bsl_base_address
+   190: 00000809   154 FUNC    GLOBAL DEFAULT    1 memset
+   191: 0000010d    88 FUNC    GLOBAL DEFAULT    1 main
+   192: 200008cc     4 OBJECT  GLOBAL DEFAULT    7 __malloc_max_total_mem
+   193: 00000d98     0 NOTYPE  GLOBAL DEFAULT    1 __init_array_end
+   194: 0000029d  1388 FUNC    GLOBAL DEFAULT    1 _malloc_r
+   195: 200008d8     0 NOTYPE  GLOBAL DEFAULT    8 __heap_start__
+   196: 00000a4d   156 FUNC    GLOBAL DEFAULT    1 _malloc_trim_r
+   197: 00000da5     0 FUNC    GLOBAL DEFAULT    1 _fini
+   198: 000001d9    12 FUNC    GLOBAL DEFAULT    1 atexit
+   199: 20000030     4 OBJECT  GLOBAL DEFAULT    5 _impure_ptr
+   200: 00000165   116 FUNC    GLOBAL DEFAULT    1 func
+   201: 200008d8     0 NOTYPE  GLOBAL DEFAULT    8 __stack
+   202: 200008d8     0 NOTYPE  GLOBAL DEFAULT    8 _end
+   203: 2000086c     4 OBJECT  GLOBAL DEFAULT    5 __malloc_trim_threshold
+   204: 000001e5    32 FUNC    GLOBAL DEFAULT    1 exit
+   205: 00000d90     0 NOTYPE  GLOBAL DEFAULT    1 __init_array_start
+   206: 00000d79     2 FUNC    GLOBAL DEFAULT    1 _exit
+   207: 200008d8     0 NOTYPE  GLOBAL DEFAULT    8 _stack
+   208: 00200000     0 NOTYPE  GLOBAL DEFAULT  ABS _mailbox_base_address
+   209: 00000000     0 NOTYPE  GLOBAL DEFAULT  ABS _intvecs_base_address
+   210: 0000028d    16 FUNC    GLOBAL DEFAULT    1 free
+
+No version information found in this file.
+Attribute Section: aeabi
+File Attributes
+  Tag_CPU_name: "7E-M"
+  Tag_CPU_arch: v7E-M
+  Tag_CPU_arch_profile: Microcontroller
+  Tag_THUMB_ISA_use: Thumb-2
+  Tag_FP_arch: VFPv4-D16
+  Tag_ABI_PCS_wchar_t: 4
+  Tag_ABI_FP_denormal: Needed
+  Tag_ABI_FP_exceptions: Needed
+  Tag_ABI_FP_number_model: IEEE 754
+  Tag_ABI_align_needed: 8-byte
+  Tag_ABI_enum_size: small
+  Tag_ABI_HardFP_use: SP only
+  Tag_ABI_VFP_args: VFP registers
+  Tag_CPU_unaligned_access: v6
+

@@ -1,0 +1,47 @@
+$ arm-none-eabi-nm --defined --size-sort -s  c1m2.out
+
+Symbil descriptions
+T: Code
+R: Read only
+D: Initialized data
+B: Uninitialized data (BSS)
+ 
+00000001 D g3
+00000001 B g4
+00000002 T _exit
+00000002 T __malloc_lock
+00000002 T __malloc_unlock
+00000004 B errno
+00000004 R g2
+00000004 R _global_impure_ptr
+00000004 b heap_end.4169
+00000004 D _impure_ptr
+00000004 B __malloc_max_sbrked_mem
+00000004 B __malloc_max_total_mem
+00000004 D __malloc_sbrk_base
+00000004 B __malloc_top_pad
+00000004 D __malloc_trim_threshold
+0000000c T atexit
+00000010 T free
+00000010 T malloc
+00000014 t register_fini
+0000001a T cleanup_glue
+0000001c T _sbrk
+00000020 T exit
+00000024 T _sbrk_r
+00000028 D g5
+00000028 T __libc_fini_array
+00000028 B __malloc_current_mallinfo
+00000050 T __libc_init_array
+00000058 T main
+00000074 T func
+00000088 T _reclaim_reent
+0000009a T memset
+0000009c T _malloc_trim_r
+000000a4 T __register_exitproc
+000000d8 T __call_exitprocs
+000001d0 T _free_r
+00000408 D __malloc_av_
+00000428 d impure_data
+0000056c T _malloc_r
+
