@@ -91,3 +91,91 @@ void set_all(char * ptr, char value, unsigned int size);
 void clear_all(char * ptr, unsigned int size);
 
 #endif /* __MEMORY_H__ */
+
+/**
+ * @brief moves a block of memory from one place to another
+ *
+ * it takes two pointers , one source and one destinationin addition to the
+ * number of bytes to be moved
+ *
+ * @param src source pointer to the beginning of memory block to be moved 
+ * @param dst destination pointer to move the block of memory to
+ * @param length number of bytes to be moved
+ *
+ * @return pointer to destination (dst)
+ */
+uint8_t * my_memmove(uint8_t * src, uint8_t * dst, size_t length);
+
+/**
+ * @brief takes pointer to a block of memory and copies it
+ *
+ * given a pointer to the beginning of the memory block and the destination
+ * pointer and size of the block, it will copy the memory block to that
+ * destiantion
+ *
+ * @param src source pointer of data to be copied
+ * @param dst destination pointer of the new location
+ * @param length number of bytes to be copied
+ *
+ * @return pointer to destination
+ */
+uint8_t * my_memcopy(uint8_t * src, uint8_t * dst, size_t length);
+
+/**
+ * @brief sets a block of memory to a certain value
+ *
+ *
+ * @param src source pointer of data to be set
+ * @param length number of bytes to be set
+ * @param value is the value that memory will be set to
+ *
+ * @return pointer to source 
+ */
+uint8_t * my_memset(uint8_t * src, size_t length, uint8_t value);
+
+/**
+ * @brief set a chunk of memory to zero
+ *
+ *
+ * @param src source pointer of data to be set
+ * @param length number of bytes to be set
+ *
+ * @return  pointer to source 
+ */
+uint8_t * my_memzero(uint8_t * src, size_t length);
+
+/**
+ * @brief reverse the order of a number of bytes
+ *
+ *
+ * @param src source pointer of data to be reversed
+ * @param length number of bytes to be reversed
+ *
+ * @return pointer to source 
+ */
+uint8_t * my_reverse(uint8_t * src, size_t length);
+
+/**
+ * @brief given a number of words to be allocated in dynamic memory
+ *
+ * it returns a pointer to the number of words in case of successful allocation
+ * and NULL otherwise
+ *
+ * @param length number of bytes to be allocated
+ *
+ * @return pointer to memory if successful , or NULL if not successful
+ */
+int32_t * reserve_words(size_t length);
+
+/**
+ * @brief free a dynamically allocated memory
+ *
+ *
+ * @param src pointer to the source of memory to be freed
+ *
+ * @return void.
+ */ 
+void free_words(uint32_t * src);
+
+
+#endif /* __MEMORY_H__ */

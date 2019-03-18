@@ -1,10 +1,10 @@
 /******************************************************************************
- * Copyright (C) 2017 by Alex Fosdick - University of Colorado
+ * Copyright (C) 2019 by Albara Abu Shaqra
  *
  * Redistribution, modification or use of this software in source or binary
  * forms is permitted as long as the files maintain this copyright. Users are
  * permitted to modify this and use it to learn about the field of embedded
- * software. Alex Fosdick and the University of Colorado are not liable for any
+ * software. Albara Abu Shaqra is not liable for any
  * misuse of this material.
  *
  *****************************************************************************/
@@ -12,10 +12,9 @@
  * @file stats.h
  * @brief a program to calculate min, max, mean, median of a set of numbers
  *
- * <Add Extended Description Here>
  *
  * @author Albara Abu Shaqra
- * @date 2/24/2019
+ * @date March 18 2019
  *
  */
 
@@ -137,13 +136,15 @@ print_statistics(int max, int min, int mean, int median){
 }
 
 print_array(unsigned char *test){
+    #ifdef VERBOSE	
     printf("The array is: \n");
     for(int i=0;i<SIZE;++i){
     printf("%5d",(int)test[i]);
     if((i+1)%8==0 || i+1==SIZE)
         printf("\n");
+   }
+    #endif
   }
-    }
 
 
 
