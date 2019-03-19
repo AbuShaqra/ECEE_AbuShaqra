@@ -42,6 +42,7 @@ ifeq ($(PLATFORM),MSP432)
 	LDFLAGS = -Wl,-Map=main.map -T $(LINKER_FILE)
 	CFLAGS = -mcpu=$(CPU) $(ARCH) --specs=$(SPECS) -Wall -Werror -g -O0 -std=c99
 	CPPFLAGS = -DMSP432
+        SIZE = arm-none-eabi-size
 
         OBJS = $(MSP_SOURCES:.c=.o)
         INCLUDES = $(MSP_INCLUDES)
@@ -79,11 +80,11 @@ endif
 compile-all: $(CC) -c $(OBJS) $(CFLAGS) $(CPPFLAGS) $(INCLUDES) -o $@
 
 .PHONY: build
-build: $(TARGET) $(size)
-size= arm-none-eabi-size -Atd c1m2.out
+build: $(TARGET)
 
 c1m2.out: $(OBJS)
 	  $(CC) $(OBJS) $(CFLAGS) $(CPPFLAGS) $(INCLUDES) $(LDFLAGS)  -o  $@
+	  $(SIZE) $@
 
 .PHONY: clean
 clean:
