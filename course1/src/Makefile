@@ -1,11 +1,10 @@
 #******************************************************************************
-# Copyright (C) 2017 by Alex Fosdick - University of Colorado
+# Copyright (C) 2019 by Albara Abu Shaqra
 #
 # Redistribution, modification or use of this software in source or binary
 # forms is permitted as long as the files maintain this copyright. Users are 
 # permitted to modify this and use it to learn about the field of embedded
-# software. Alex Fosdick and the University of Colorado are not liable for any
-# misuse of this material. 
+# software. Albara Abu Shaqra is not liable for any misuse of this material. 
 #
 #*****************************************************************************
 
@@ -15,10 +14,15 @@
 # Use: make [TARGET] [PLATFORM-OVERRIDES]
 #
 # Build Targets:
-#      <Put a description of the supported targets here>
+#       <FILE>.o - Builds <FILE>.o object file
+#       <FILE>.i - Builds <FILE>.i preprocessed file
+#       <FILE>.asm - Builds <FILE>.asm assembly file
+#       compile-all - compile all object files without linking
+#       build - Builds and links all source files
+#       clean - removes all generated files
 #
 # Platform Overrides:
-#      <Put a description of the supported Overrides here
+#       PLATFORM - the target platform (MSP432 or HOST)
 #
 #------------------------------------------------------------------------------
 include sources.mk
@@ -27,7 +31,17 @@ include sources.mk
 # Platform Overrides
 
 PLATFORM = MSP432
-TARGET= c1m2.out
+TARGET= final.out
+VERBOSE = DISABLE
+COURSE  = COURSE 
+
+ifeq ($(VERBOSE),ENABLE)
+  CPPFLAGS += -DVERBOSE
+endif
+
+ifeq ($(COURSE),COURSE1)
+  CPPFLAGS += -DCOURSE1
+endif
 
 ifeq ($(PLATFORM),MSP432)
 	# Architectures Specific Flags
@@ -42,7 +56,7 @@ ifeq ($(PLATFORM),MSP432)
 	LDFLAGS = -Wl,-Map=main.map -T $(LINKER_FILE)
 	CFLAGS = -mcpu=$(CPU) $(ARCH) --specs=$(SPECS) -Wall -Werror -g -O0 -std=c99
 	CPPFLAGS = -DMSP432
-
+        SIZE = arm-none-eabi-size
         OBJS = $(MSP_SOURCES:.c=.o)
         INCLUDES = $(MSP_INCLUDES)
 
@@ -55,6 +69,7 @@ else ifeq ($(PLATFORM),HOST)
 	LDFLAGS = -Wl,-Map=main.map -T $(LINKER_FILE)
 	CFLAGS = -Wall -Werror -g -O0 -std=c99
 	CPPFLAGS = -DHOST
+        SIZE = arm-none-eabi-size
         OBJS = $(HOST_SOURCES:.c=.o)
         INCLUDES = $(HOST_INCLUDES)
 else 
@@ -79,11 +94,11 @@ endif
 compile-all: $(CC) -c $(OBJS) $(CFLAGS) $(CPPFLAGS) $(INCLUDES) -o $@
 
 .PHONY: build
-build: $(TARGET) $(size)
-size= arm-none-eabi-size -Atd c1m2.out
+build: $(TARGET)
 
-c1m2.out: $(OBJS)
+final.out: $(OBJS)
 	  $(CC) $(OBJS) $(CFLAGS) $(CPPFLAGS) $(INCLUDES) $(LDFLAGS)  -o  $@
+	  $(SIZE) $@
 
 .PHONY: clean
 clean:

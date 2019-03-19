@@ -20,7 +20,6 @@
 #define __COURSE1_H__
 
 #include <stdint.h>
-
 #define DATA_SET_SIZE_W (10)
 #define MEM_SET_SIZE_B  (32)
 #define MEM_SET_SIZE_W  (8)
