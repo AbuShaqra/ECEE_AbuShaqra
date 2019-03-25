@@ -28,6 +28,7 @@ include sources.mk
 
 PLATFORM = MSP432
 TARGET= c1m2.out
+SIZE = arm-none-eabi-size
 
 ifeq ($(PLATFORM),MSP432)
 	# Architectures Specific Flags
@@ -42,8 +43,6 @@ ifeq ($(PLATFORM),MSP432)
 	LDFLAGS = -Wl,-Map=main.map -T $(LINKER_FILE)
 	CFLAGS = -mcpu=$(CPU) $(ARCH) --specs=$(SPECS) -Wall -Werror -g -O0 -std=c99
 	CPPFLAGS = -DMSP432
-        SIZE = arm-none-eabi-size
-
         OBJS = $(MSP_SOURCES:.c=.o)
         INCLUDES = $(MSP_INCLUDES)
 
@@ -60,7 +59,7 @@ else ifeq ($(PLATFORM),HOST)
         INCLUDES = $(HOST_INCLUDES)
 else 
 
-@echo "Platform not supported!"
+@echo 'Platform not supported!'
 
 endif 
 
